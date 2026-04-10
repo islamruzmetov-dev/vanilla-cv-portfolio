@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div id="login-view" class="view-container active">
+        <div class="login-card">
+            <h2>Welcome Back</h2>
+            <p class="subtitle">Sign in to view the portfolio</p>
+            
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <div class="input-wrapper">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i>
+                        <input type="text" id="username" placeholder="Enter username" required aria-label="Username">
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                        <input type="password" id="password" placeholder="Enter password" required aria-label="Password">
+                        <button type="button" id="toggle-password" class="toggle-btn" aria-label="Toggle password visibility">
+                            <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit" id="submit-btn" class="btn-primary" aria-live="polite">Sign In</button>
+            </form>
+            <p class="demo-text">Demo credentials: test / test</p>
+            <p id="error-message" class="error hidden" aria-live="assertive">Invalid credentials. Try again.</p>
+        </div>
+    </div>
+
+    <div id="cv-view" class="view-container hidden">
+        <header class="navbar">
+            <h1 class="logo">Portfolio</h1>
+            <button id="logout-btn" class="btn-outline" aria-label="Logout securely">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+            </button>
+        </header>
+
+        <main class="cv-grid">
+            <aside class="profile-card card">
+                <div class="avatar-placeholder" aria-hidden="true">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+                <h2>Islam-san</h2>
+                <h3 class="job-title">Software Engineer</h3>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span>Tashkent, Uzbekistan</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                        <span>dev@example.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                        <span>+998 90 000 00 00</span>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="content-sections">
+                <section class="card">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> About Me
+                    </h3>
+                    <p>Software Engineering student with a passion for clean architecture and backend systems. I focus on creating independent, robust solutions rather than relying on mainstream templates. Deeply interested in Japanese culture and incorporating disciplined, detail-oriented approaches into my code.</p>
+                </section>
+
+                <section class="card">
+                    <h3 class="section-title">
+                        <i class="fa-regular fa-building" aria-hidden="true"></i> Experience & Projects
+                    </h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <h4>Backend Automation Project</h4>
+                            <p class="date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> 2023 - Present</p>
+                            <p>Developed custom C# and Python scripts to automate data workflows and system integrations.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Language App Prototype</h4>
+                            <p class="date"><i class="fa-regular fa-calendar" aria-hidden="true"></i> 2023</p>
+                            <p>Designed the core logic for a niche Japanese language learning tool, focusing on kanji memorization algorithms.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="card">
+                    <h3 class="section-title">
+                        <i class="fa-solid fa-code" aria-hidden="true"></i> Skills
+                    </h3>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header"><span>Python & C#</span><span>85%</span></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-header"><span>System Architecture</span><span>70%</span></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" style="width: 70%; background-color: #4CAF50;"></div>
+                        </div>
+                    </div>
+
+                    <div class="skill-item">
+                        <div class="skill-header"><span>HTML/CSS/JS</span><span>60%</span></div>
+                        <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress" style="width: 60%; background-color: #FF9800;"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <footer class="cv-footer">
+                <p>&copy; <span id="current-year"></span> Islam-san Portfolio. Built with dedication.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+:root {
+    --primary-color: #1a1a2e;
+    --secondary-color: #16213e;
+    --accent-color: #4a4e69;
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --border-radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+
+body { background-color: var(--bg-color); color: var(--text-main); line-height: 1.6; }
+
+.hidden { display: none !important; }
+.active { display: flex; }
+
+#login-view { min-height: 100vh; align-items: center; justify-content: center; }
+
+.login-card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Анимация тряски для неверного логина */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+.shake { animation: shake 0.4s ease-in-out; }
+
+.subtitle { color: var(--text-muted); margin-bottom: 2rem; }
+.input-group { text-align: left; margin-bottom: 1.5rem; }
+.input-group label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; }
+.input-wrapper { position: relative; }
+.input-wrapper i.fa-user, .input-wrapper i.fa-lock { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); }
+.input-wrapper input { width: 100%; padding: 10px 40px 10px 35px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
+
+/* Стили для глазика */
+.toggle-btn {
+    position: absolute; right: 10px; top: 50%; transform: translateY(-50%);
+    background: none; border: none; cursor: pointer; color: var(--text-muted);
+}
+.toggle-btn:hover { color: var(--primary-color); }
+
+.btn-primary {
+    width: 100%; padding: 12px; background-color: var(--primary-color);
+    color: white; border: none; border-radius: 6px; font-size: 1rem;
+    font-weight: 600; cursor: pointer; transition: all 0.3s;
+}
+.btn-primary:hover:not(:disabled) { background-color: var(--secondary-color); }
+/* Состояние загрузки */
+.btn-primary:disabled { opacity: 0.7; cursor: not-allowed; }
+
+.demo-text { margin-top: 1.5rem; font-size: 0.85rem; color: var(--text-muted); }
+.error { color: #dc3545; font-size: 0.85rem; margin-top: 1rem; }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 5%; background: var(--card-bg); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.btn-outline { padding: 8px 16px; background: transparent; border: 1px solid var(--primary-color); color: var(--primary-color); border-radius: 6px; cursor: pointer; font-weight: 600; }
+.btn-outline:hover { background: var(--primary-color); color: white; }
+
+.cv-grid { display: grid; grid-template-columns: 300px 1fr; gap: 2rem; padding: 2rem 5%; max-width: 1200px; margin: 0 auto; }
+.card { background: var(--card-bg); padding: 1.5rem; border-radius: var(--border-radius); box-shadow: 0 4px 15px rgba(0,0,0,0.03); margin-bottom: 1.5rem; }
+
+.profile-card { text-align: center; height: fit-content; }
+.avatar-placeholder { width: 120px; height: 120px; border-radius: 50%; background: #e2e8f0; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 2rem; color: #94a3b8; }
+.job-title { color: var(--text-muted); font-size: 1rem; margin-bottom: 1.5rem; }
+.contact-info { text-align: left; border-top: 1px solid #eee; padding-top: 1.5rem; }
+.contact-item { margin-bottom: 1rem; display: flex; align-items: center; gap: 10px; color: var(--text-muted); }
+
+.section-title { margin-bottom: 1.5rem; color: var(--primary-color); display: flex; align-items: center; gap: 10px; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; }
+.timeline-item { margin-bottom: 1.5rem; border-left: 2px solid var(--accent-color); padding-left: 1rem; }
+.timeline-item .date { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem; }
+
+.skill-item { margin-bottom: 1rem; }
+.skill-header { display: flex; justify-content: space-between; margin-bottom: 0.3rem; font-weight: 600;}
+.progress-bar { width: 100%; height: 8px; background: #eee; border-radius: 4px; overflow: hidden; }
+.progress { height: 100%; background: var(--primary-color); border-radius: 4px; }
+
+/* Стили футера */
+.cv-footer { grid-column: 1 / -1; text-align: center; padding: 1rem; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #ddd; margin-top: 1rem; }
+
+@media (max-width: 768px) { .cv-grid { grid-template-columns: 1fr; } }
